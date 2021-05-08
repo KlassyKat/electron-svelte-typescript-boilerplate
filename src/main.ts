@@ -18,8 +18,7 @@ function launch() {
     win = new BrowserWindow({
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
-        },
-        backgroundColor: "#222222"
+        }
     });
 
     win.loadFile(path.join(__dirname, "../index.html"));
