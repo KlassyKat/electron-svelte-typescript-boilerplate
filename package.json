@@ -1,0 +1,73 @@
+{
+    "name": "electron-svelte-typescript-boilerplate",
+    "version": "1.0.0",
+    "description": "",
+    "main": "public/build/main.js",
+    "scripts": {
+        "start": "cross-env NODE_ENV=development electron .",
+        "dev": "rollup -cw",
+        "bundle": "rollup -c",
+        "build:all": "npm run bundle && electron-builder build -mwl",
+        "build:linux": "npm run bundle && electron-builder build --linux",
+        "build:win": "npm run bundle && electron-builder build --win --x64",
+        "build:mac": "npm run bundle && electron-builder build --mac"
+    },
+    "keywords": [
+        "Electron",
+        "svelte",
+        "svelte electron",
+        "electron svelte",
+        "typescript"
+    ],
+    "author": {
+        "name": "Klassy Kat",
+        "email": "gabealexander01@gmail.com"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^18.0.0",
+        "@rollup/plugin-json": "^4.1.0",
+        "@rollup/plugin-node-resolve": "^11.2.1",
+        "@rollup/plugin-typescript": "^8.2.1",
+        "@tsconfig/svelte": "^1.0.10",
+        "cross-env": "^7.0.3",
+        "electron": "^12.0.6",
+        "electron-builder": "^22.10.5",
+        "electron-reload": "^1.5.0",
+        "postcss": "^8.2.13",
+        "rollup": "^2.46.0",
+        "rollup-plugin-postcss": "^4.0.0",
+        "rollup-plugin-svelte": "^7.1.0",
+        "svelte": "^3.38.1",
+        "svelte-preprocess": "^4.7.3",
+        "typescript": "^4.2.4"
+    },
+    "build": {
+        "productName": "Your App",
+        "appId": "your.id",
+        "directories": {
+            "buildResources": "buildResources",
+            "output": "release"
+        },
+        "win": {
+            "target": [
+                "nsis"
+            ]
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true
+        },
+        "linux": {
+            "target": [
+                "deb",
+                "AppImage"
+            ] 
+        },
+        "mac": {
+            "target": [
+                "dmg"
+            ]
+        }
+    }
+}
