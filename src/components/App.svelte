@@ -7,7 +7,7 @@
     let helloWorld: HelloWorld = {
         greeting: "Hello, World",
         svelte: true,
-        typescript: false
+        typescript: true
     }
 
     // Accessing our Context Bridge(preload.ts)
